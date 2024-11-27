@@ -1,741 +1,167 @@
-
-  <!DOCTYPE html>
-  <html lang="en"  >
-  <head>
-  <meta charset="utf-8">
-  
-
-  
-
-  
-
-  
-  <script>window.icon_font = '4552607_tq6stt6tcg';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};</script>
-  
-  
-  <title>
-    
-    Hexo
-  </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
-  
-    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_tq6stt6tcg.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  
-  
-    
-<link rel="stylesheet" href="/css/loader.css">
-
-  
-  
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>蒜头王八</title><meta name="author" content="OrangeLin2312"><meta name="copyright" content="OrangeLin2312"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="欢迎来到第五次元">
+<meta property="og:type" content="website">
+<meta property="og:title" content="蒜头王八">
 <meta property="og:url" content="https://orangelin2312.github.io/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://orangelin2312.github.io/images/banner.webp">
+<meta property="og:site_name" content="蒜头王八">
+<meta property="og:description" content="欢迎来到第五次元">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://orangelin2312.github.io/images/dog.jpg">
 <meta property="article:author" content="OrangeLin2312">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://orangelin2312.github.io/images/banner.webp">
-  
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/images/favicon.ico">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  <link rel="preload" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  
-  
-  
-    
-<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
-
-  
-  
-    
-<link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.0.1/dist/aos.css">
-
-  
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-  <body>
-    
-  <div id='loader'>
-    <div class="loading-left-bg loading-bg"></div>
-    <div class="loading-right-bg loading-bg"></div>
-    <div class="spinner-box">
-      <div class="loading-taichi">
-        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
-          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff5252" />
-          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
-         M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="#ff5252" />
-        </svg>
-      </div>
-      <div class="loading-word">少女祈祷中...</div>
-    </div>
-  </div>
-  </div>
-  <script>
-    var time = null;
-    var startLoading = () => {
-      time = Date.now();
-      document.getElementById('loader').classList.remove("loading");
+<meta name="twitter:image" content="https://orangelin2312.github.io/images/dog.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://orangelin2312.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
     }
-    var endLoading = () => {
-      if (!time) {
-        document.body.style.overflow = 'auto';
-        document.getElementById('loader').classList.add("loading");
-      } else {
-        if (Date.now() - time > 500) {
-          time = null;
-          document.body.style.overflow = 'auto';
-          document.getElementById('loader').classList.add("loading");
-        } else {
-          setTimeout(endLoading, 500 - (Date.now() - time));
-          time = null;
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
         }
       }
-    }
-    window.addEventListener('DOMContentLoaded', endLoading);
-    document.getElementById('loader').addEventListener('click', endLoading);
-  </script>
-
-<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
-</div>
-
-
-    <div id="container">
-      <div id="wrap">
-        <div id="header-nav">
-  <nav id="main-nav">
-    
-      <span class="main-nav-link-wrap">
-        <div class="main-nav-icon icon-taichi"></div>
-        <a class="main-nav-link" href="/">Home</a>
-      </span>
-    
-      <span class="main-nav-link-wrap">
-        <div class="main-nav-icon icon-taichi"></div>
-        <a class="main-nav-link" href="/archives">Archives</a>
-      </span>
-    
-      <span class="main-nav-link-wrap">
-        <div class="main-nav-icon icon-taichi"></div>
-        <a class="main-nav-link" href="/about">About</a>
-      </span>
-    
-      <span class="main-nav-link-wrap">
-        <div class="main-nav-icon icon-taichi"></div>
-        <a class="main-nav-link" href="/friend">Friend</a>
-      </span>
-    
-    <a id="main-nav-toggle" class="nav-icon"></a>
-  </nav>
-  <nav id="sub-nav">
-    
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" target="_blank"></a>
-    
-    
-    
-  </nav>
-</div>
-<header id="header">
-  
-    
-      <img fetchpriority="high" src="/images/banner%20(2).webp" alt="">
-    
-  
-  <div id="header-outer">
-    <div id="header-title">
-      
-        
-        
-          <a href="/" id="logo">
-            <h1 data-aos="slide-up">Hexo</h1>
-          </a>
-        
-      
-      
-        
-        <h2 id="subtitle-wrap" data-aos="slide-down">
-          
-        </h2>
-      
-    </div>
-  </div>
-</header>
-
-        <div id="content">
-          
-          <section id="main">
-  
-  
-  <div class="post-wrapper">
-  <div class="post-wrap-left" data-aos="fade-up">
-    
-      <a class="post-link" href="/2024/11/15/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" aria-label=""></a>
-    
-    
-    <div class="post-cover-left">
-      
-        
-        
-          <img data-src="/images/banner%20(2).webp" data-sizes="auto" alt="" class="lazyload">
-        
-      
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2024-11-15</span>
-        <span><span class="icon-pencil"></span>3.1k words</span>
-        <span><span class="icon-clock"></span>12 mins</span>
-      </div>
-      <h2 class="post-title"></h2>
-      <article class="post-article">
-        
-          设计模式反射
-单例模式静态代码块类在jvm中加载时执行，只执行一次。
-“静态代码块只执行一次”的意思是，在Java程序运行期间，当一个类被加载到Java虚拟机（JVM）时，与该类关联的静态代码块会被自动执行，而且这个执行过程只发生一次。
-这里有几个关键点需要理解：
-
-类加载：当程序首次引用一个类（例如，通过创建该类的实例，访问该类的静态方法或静态字段等），JVM会检查该类是否已经被加载。如果没有，JVM会加载该类，包括执行其静态初始化代码（即静态代码块）。
-静态代码块的执行：静态代码块在类加载过程中执行，而不是在创建类的实例时执行。这意味着，无论创建多少个类的实例，静态代码块都只会执行一次。
-
-        
-      </article>
-    </div>
-  </div>
-  </div>
-
-
-  
-  
-  <div class="post-wrapper">
-  <div class="post-wrap-right" data-aos="fade-up">
-    
-      <a class="post-link" href="/2024/11/15/%E5%89%8D%E7%AB%AFvue/" aria-label=""></a>
-    
-    
-    <div class="post-cover-right">
-      
-        
-        
-          <img data-src="/images/banner%20(2).webp" data-sizes="auto" alt="" class="lazyload">
-        
-      
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2024-11-15</span>
-        <span><span class="icon-pencil"></span>571 words</span>
-        <span><span class="icon-clock"></span>2 mins</span>
-      </div>
-      <h2 class="post-title"></h2>
-      <article class="post-article">
-        
-          前端学习-Vuevue中，父组件给子组件传值，子组件给父组件传值，怎么传，请举例说明在Vue中，父组件向子组件传递数据通常使用props，而子组件向父组件传递数据则使用自定义事件($emit)。下面我将通过一个简单的例子来说明这两个过程。
-如果你在使用Vue 3的setup语法糖的同时，还想保持选项式API的风格，你可以这样做：
-父组件向子组件传值父组件 (ParentComponent.vue):
-12345678910111213&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;h1&amp;gt;父组件&amp;lt;/h1&amp;gt;    &amp;lt;ChildComponent :
-        
-      </article>
-    </div>
-  </div>
-  </div>
-
-
-  
-  
-  <div class="post-wrapper">
-  <div class="post-wrap-left" data-aos="fade-up">
-    
-      <a class="post-link" href="/2024/11/15/SSM%E5%AD%A6%E4%B9%A0/" aria-label=""></a>
-    
-    
-    <div class="post-cover-left">
-      
-        
-        
-          <img data-src="/images/banner%20(2).webp" data-sizes="auto" alt="" class="lazyload">
-        
-      
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2024-11-15</span>
-        <span><span class="icon-pencil"></span>1k words</span>
-        <span><span class="icon-clock"></span>4 mins</span>
-      </div>
-      <h2 class="post-title"></h2>
-      <article class="post-article">
-        
-          
-title:SSM初步学习SSM框架spring核心容器容器
-bean
-依赖注入
-IOC控制反转使用对象：从主动new对象变成了外部提供，由IOC容器（外部）负责管理对象，被管理的对象叫做Bean。
-DI：依赖注入，绑定两个对象之间的关系。
-bean创建出来默认是单例模式，因此封装的model对象其实是不适合交给容器管理的。
-实例化bean的三种方式
-通过构造方式（反射）
-
-静态工厂（了解即可
-
-实例化工厂
-
-（重）FactoryBean接口
-
-public class UserDaoFactory implements FactoryBean&amp;lt;UserDao&amp;gt; &amp;#123;
-
-
-        
-      </article>
-    </div>
-  </div>
-  </div>
-
-
-  
-  
-  <div class="post-wrapper">
-  <div class="post-wrap-right" data-aos="fade-up">
-    
-      <a class="post-link" href="/2024/11/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/" aria-label=""></a>
-    
-    
-    <div class="post-cover-right">
-      
-        
-        
-          <img data-src="/images/banner%20(2).webp" data-sizes="auto" alt="" class="lazyload">
-        
-      
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2024-11-15</span>
-        <span><span class="icon-pencil"></span>1.2k words</span>
-        <span><span class="icon-clock"></span>5 mins</span>
-      </div>
-      <h2 class="post-title"></h2>
-      <article class="post-article">
-        
-          数据库设计线性表构建树结构大家都由根延伸而出，且根是一个虚无的东西.
-如一个树形目录：
-Directory（目录表）
-一级目录深度为1，二级目录深度为2….
-
-
-
-id
-parent_id
-name
-deep
-
-
-
-1
-0
-根（虚无，不显示）
-0
-
-
-2
-1
-电子产品
-1
-
-
-3
-1
-家具
-1
-
-
-4
-2
-手机
-2
-
-
-5
-3
-沙发
-2
-
-
-存储过程eg:用户注册1234567891011121314151617181920212223242526272829303132333435363738394041424344DELIMITER //CREATE PROCEDURE RegisterU
-        
-      </article>
-    </div>
-  </div>
-  </div>
-
-
-  
-  
-  <div class="post-wrapper">
-  <div class="post-wrap-left" data-aos="fade-up">
-    
-      <a class="post-link" href="/2018/01/05/hello-world/" aria-label="欢迎来到第五次元"></a>
-    
-    
-    <div class="post-cover-left">
-      
-        
-        
-          <img data-src="/images/banner%20(2).webp" data-sizes="auto" alt="欢迎来到第五次元" class="lazyload">
-        
-      
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2018-01-05</span>
-        <span><span class="icon-pencil"></span>83 words</span>
-        <span><span class="icon-clock"></span>1 min</span>
-      </div>
-      <h2 class="post-title">欢迎来到第五次元</h2>
-      <article class="post-article">
-        
-          
-Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-欢迎来到第五次元Quick StartCreate a new post1$ hexo new &amp;quot;My New Post&amp;quot;
-
-More info: Writing
-Run server1$
-        
-      </article>
-    </div>
-  </div>
-  </div>
-
-
-  
-
-
-
-</section>
-          
-            <aside id="sidebar">
-  <div class="sidebar-wrapper ">
-    <div class="sidebar-wrap" data-aos="fade-up">
-      
-        <div class="sidebar-author">
-  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="OrangeLin2312" class="lazyload">
-  <div class="sidebar-author-name">OrangeLin2312</div>
-  <div class="sidebar-description"></div>
-</div>
-<div class="sidebar-state">
-  <div class="sidebar-state-article">
-    <div>Posts</div>
-    <div class="sidebar-state-number">5</div>
-  </div>
-  <div class="sidebar-state-category">
-    <div>Categories</div>
-    <div class="sidebar-state-number">0</div>
-  </div>
-  <div class="sidebar-state-tag">
-    <div>Tags</div>
-    <div class="sidebar-state-number">0</div>
-  </div>
-</div>
-<div class="sidebar-social">
-  
-</div>
-<div class="sidebar-menu">
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
-      <div class="sidebar-menu-icon icon-taichi"></div>
-      <div class="sidebar-menu-link">Home</div>
-    </div>
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
-      <div class="sidebar-menu-icon icon-taichi"></div>
-      <div class="sidebar-menu-link">Archives</div>
-    </div>
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
-      <div class="sidebar-menu-icon icon-taichi"></div>
-      <div class="sidebar-menu-link">About</div>
-    </div>
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
-      <div class="sidebar-menu-icon icon-taichi"></div>
-      <div class="sidebar-menu-link">Friend</div>
-    </div>
-  
-</div>
-
-      
-      
-    </div>
-  </div>
-
-  
-</aside>
-
-          
-        </div>
-        <footer id="footer">
-  <div style="width: 100%; overflow: hidden">
-    <div class="footer-line"></div>
-  </div>
-  <div id="footer-info">
-    
-    <div>
-      <span class="icon-copyright"></span>
-      2020-2024
-      <span class="footer-info-sep"></span>
-      OrangeLin2312
-    </div>
-    
-      <div>
-        Powered by&nbsp;<a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
-        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener external nofollow noreferrer" target="_blank">Reimu</a>
-      </div>
-    
-    
-      <div>
-        <span class="icon-brush"></span>
-        6k
-        &nbsp;|&nbsp;
-        <span class="icon-coffee"></span>
-        00:24
-      </div>
-    
-    
-    
-    
-      <div>
-        <span class="icon-eye"></span>
-        <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
-        &nbsp;|&nbsp;
-        <span class="icon-user"></span>
-        <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
-      </div>
-    
-  </div>
-</footer>
-
-        <div class="sidebar-top">
-          <img src="/images/taichi.png" height="50" width="50" alt="backtop" />
-          <div class="arrow-up"></div>
-        </div>
-        <div id="mask"></div>
-      </div>
-      <nav id="mobile-nav">
-  <div class="sidebar-wrap">
-    
-      <div class="sidebar-author">
-  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="OrangeLin2312" class="lazyload">
-  <div class="sidebar-author-name">OrangeLin2312</div>
-  <div class="sidebar-description"></div>
-</div>
-<div class="sidebar-state">
-  <div class="sidebar-state-article">
-    <div>Posts</div>
-    <div class="sidebar-state-number">5</div>
-  </div>
-  <div class="sidebar-state-category">
-    <div>Categories</div>
-    <div class="sidebar-state-number">0</div>
-  </div>
-  <div class="sidebar-state-tag">
-    <div>Tags</div>
-    <div class="sidebar-state-number">0</div>
-  </div>
-</div>
-<div class="sidebar-social">
-  
-</div>
-<div class="sidebar-menu">
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
-      <div class="sidebar-menu-icon icon-taichi"></div>
-      <div class="sidebar-menu-link">Home</div>
-    </div>
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
-      <div class="sidebar-menu-icon icon-taichi"></div>
-      <div class="sidebar-menu-link">Archives</div>
-    </div>
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
-      <div class="sidebar-menu-icon icon-taichi"></div>
-      <div class="sidebar-menu-link">About</div>
-    </div>
-  
-    <div class="sidebar-menu-link-wrap">
-      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
-      <div class="sidebar-menu-icon icon-taichi"></div>
-      <div class="sidebar-menu-link">Friend</div>
-    </div>
-  
-</div>
-
-    
-  </div>
-  
-</nav>
-
-    </div>
-    
-    
-<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
-
-
-<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-  
-<script src="/js/aos.js"></script>
-
-  <script>
-    var aosInit = () => {
-      AOS.init({
-        duration: 1000,
-        easing: "ease",
-        once: true,
-        offset: 50,
-      });
-    };
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', aosInit);
-    } else {
-      aosInit();
-    }
-  </script>
-
-
-
-<script src="/js/pjax_script.js" data-pjax></script>
-
-
-<script type="module" data-pjax>
-  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js";
-  
-  const pswp = () => {
-    if (_$$('.article-entry a.article-gallery-item').length > 0) {
-      new PhotoSwipeLightbox({
-        gallery: '.article-entry',
-        children: 'a.article-gallery-item',
-        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js")
-      }).init();
-    }
-    if(_$$('.article-gallery a.article-gallery-item').length > 0) {
-      new PhotoSwipeLightbox({
-        gallery: '.article-gallery',
-        children: 'a.article-gallery-item',
-        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js")
-      }).init();
-    }
-    window.lightboxStatus = 'done';
-    window.removeEventListener('lightbox:ready', pswp);
-  }
-  if(window.lightboxStatus === 'ready') {
-    pswp()
-  } else {
-    window.addEventListener('lightbox:ready', pswp);
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-<script src="https://npm.webcache.cn/mouse-firework@0.0.4/dist/index.umd.js"></script>
-
-  <script>
-    window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
-  </script>
-
-
-
-
-
-
-
-  
-<script src="https://npm.webcache.cn/quicklink@2.3.0/dist/quicklink.umd.js"></script>
-
-  <script data-pjax>
-    window.quicklink?.listen({
-      timeout: 3000,
-      priority: true,
-      ignores: []
-    });
-  </script>
-
-
-<div id="lazy-script">
-  <div>
-    
-  </div>
-</div>
-
-
-  <script>
-    console.log(String.raw`%c 
- ______     ______     __     __    __     __  __    
-/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
-\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
- \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
-  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
-                                                  
-`,'color: #ff5252;')
-    console.log('%c Theme.Reimu v' + '0.3.3' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
-  </script>
-  
-
-
-
-  
-<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
-
-
-
-
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.getRegistrations().then((registrations) => {
-      for (let registration of registrations) {
-        registration.unregister();
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
       }
-    });
-  }
-</script>
 
-  <!-- hexo injector body_end start -->
-<script src="/js/insert_highlight.js" data-pjax></script>
-<!-- hexo injector body_end end --></body>
-  </html>
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
 
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '蒜头王八',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/images/banner1.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">蒜头王八</span></a></span><div id="menus"></div></nav><div id="site-info"><h1 id="site-title">蒜头王八</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/11/15/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="无标题">无标题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-11-15T13:31:21.056Z" title="发表于 2024-11-15 21:31:21">2024-11-15</time></span></div><div class="content">设计模式反射 单例模式静态代码块类在jvm中加载时执行，只执行一次。 “静态代码块只执行一次”的意思是，在Java程序运行期间，当一个类被加载到Java虚拟机（JVM）时，与该类关联的静态代码块会被自动执行，而且这个执行过程只发生一次。 这里有几个关键点需要理解：  类加载：当程序首次引用一个类（例如，通过创建该类的实例，访问该类的静态方法或静态字段等），JVM会检查该类是否已经被加载。如果没有，JVM会加载该类，包括执行其静态初始化代码（即静态代码块）。 静态代码块的执行：静态代码块在类加载过程中执行，而不是在创建类的实例时执行。这意味着，无论创建多少个类的实例，静态代码块都只会执行一次。 只执行一次：静态代码块的执行与类的实例化无关。一旦类被加载，静态代码块就执行了，后续对类的任何引用（包括创建更多实例）都不会再次触发静态代码块的执行。  这种特性使得静态代码块非常适合用于执行只需要进行一次的初始化操作，例如创建单例对象、初始化静态资源或设置全局配置等。 下面是一个简单的例子来说明这一点： 1234567891011121314public class Example...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/11/15/%E5%89%8D%E7%AB%AFvue/" title="无标题">无标题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-11-15T13:31:21.053Z" title="发表于 2024-11-15 21:31:21">2024-11-15</time></span></div><div class="content">前端学习-Vuevue中，父组件给子组件传值，子组件给父组件传值，怎么传，请举例说明在Vue中，父组件向子组件传递数据通常使用props，而子组件向父组件传递数据则使用自定义事件($emit)。下面我将通过一个简单的例子来说明这两个过程。 如果你在使用Vue 3的setup语法糖的同时，还想保持选项式API的风格，你可以这样做： 父组件向子组件传值父组件 (ParentComponent.vue): 12345678910111213&lt;template&gt;  &lt;div&gt;    &lt;h1&gt;父组件&lt;/h1&gt;    &lt;ChildComponent :message=&quot;parentMessage&quot; /&gt;  &lt;/div&gt;&lt;/template&gt;&lt;script setup&gt;import &#123; ref &#125; from &#x27;vue&#x27;;import ChildComponent from...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/11/15/SSM%E5%AD%A6%E4%B9%A0/" title="无标题">无标题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-11-15T13:31:21.050Z" title="发表于 2024-11-15 21:31:21">2024-11-15</time></span></div><div class="content"> title:SSM初步学习SSM框架spring核心容器容器 bean 依赖注入 IOC控制反转使用对象：从主动new对象变成了外部提供，由IOC容器（外部）负责管理对象，被管理的对象叫做Bean。 DI：依赖注入，绑定两个对象之间的关系。 bean创建出来默认是单例模式，因此封装的model对象其实是不适合交给容器管理的。 实例化bean的三种方式 通过构造方式（反射）  静态工厂（了解即可  实例化工厂  （重）FactoryBean接口  public class UserDaoFactory implements FactoryBean&lt;UserDao&gt; &#123;      @Override     public UserDao getObject() throws Exception &#123;         return new UserDaoImpl();     &#125;      @Override     public Class&lt;?&gt; getObjectType() &#123;         return...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/11/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/" title="无标题">无标题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-11-15T13:31:21.034Z" title="发表于 2024-11-15 21:31:21">2024-11-15</time></span></div><div class="content">数据库设计线性表构建树结构大家都由根延伸而出，且根是一个虚无的东西. 如一个树形目录： Directory（目录表） 一级目录深度为1，二级目录深度为2….    id parent_id name deep    1 0 根（虚无，不显示） 0   2 1 电子产品 1   3 1 家具 1   4 2 手机 2   5 3 沙发 2   存储过程eg:用户注册1234567891011121314151617181920212223242526272829303132333435363738394041424344DELIMITER //CREATE PROCEDURE RegisterUser(    IN p_username VARCHAR(50),    IN p_email VARCHAR(100),    IN p_password VARCHAR(255),    OUT p_result VARCHAR(50)  -- 添加输出参数用于返回结果)BEGIN    -- 声明变量用于存储插入的用户ID和检查结果    DECLARE v_user_id...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2018/01/05/hello-world/" title="欢迎来到第五次元">欢迎来到第五次元</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-01-04T16:00:00.000Z" title="发表于 2018-01-05 00:00:00">2018-01-05</time></span></div><div class="content"> Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. 欢迎来到第五次元Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote sites1$ hexo deploy  More info: Deployment </div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/dog.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">OrangeLin2312</div><div class="author-info-description">欢迎来到第五次元</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2024/11/15/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="无标题">无标题</a><time datetime="2024-11-15T13:31:21.056Z" title="发表于 2024-11-15 21:31:21">2024-11-15</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/11/15/%E5%89%8D%E7%AB%AFvue/" title="无标题">无标题</a><time datetime="2024-11-15T13:31:21.053Z" title="发表于 2024-11-15 21:31:21">2024-11-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/15/SSM%E5%AD%A6%E4%B9%A0/" title="无标题">无标题</a><time datetime="2024-11-15T13:31:21.050Z" title="发表于 2024-11-15 21:31:21">2024-11-15</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/11/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/" title="无标题">无标题</a><time datetime="2024-11-15T13:31:21.034Z" title="发表于 2024-11-15 21:31:21">2024-11-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2018/01/05/hello-world/" title="欢迎来到第五次元">欢迎来到第五次元</a><time datetime="2018-01-04T16:00:00.000Z" title="发表于 2018-01-05 00:00:00">2018-01-05</time></div></div></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+    <ul class="card-archive-list">
+  
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/11/">
+          <span class="card-archive-list-date">十一月 2024</span>
+          <span class="card-archive-list-count">4</span>
+        </a>
+      </li>
+    
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2018/01/">
+          <span class="card-archive-list-date">一月 2018</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    </ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">5</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-11-27T13:33:08.973Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By OrangeLin2312</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
