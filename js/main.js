@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let initTop = 0
     const $header = document.getElementById('page-header')
     const isChatBtn = typeof chatBtn !== 'undefined'
-    const isShowPercent = GLOBAL_CONFIG.percent.rightside
+    const isShowPercent = true
 
     // 檢查文檔高度是否小於視窗高度
     const checkDocumentHeight = () => {
