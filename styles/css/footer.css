@@ -3,11 +3,7 @@
 }
 
 #footer {
-    background: linear-gradient(
-            90deg,
-            rgba(167, 223, 255, 0.45),
-            rgb(229, 255, 231)
-    );
+    background: linear-gradient(90deg, rgba(167, 223, 255, 0.45), rgb(255 245 202 / 67%));
 }
 
 #footer #footer-wrap,
@@ -23,8 +19,8 @@
 
 #footer .container {
     line-height: 0;
-    position: relative;
-    height: 100%;
+    /*position: relative;*/
+    height: 150px;
     width: 100vw;
 }
 
