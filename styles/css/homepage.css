@@ -1,0 +1,33 @@
+.recent-post-item{
+    background: linear-gradient(90deg,  rgba(167, 223, 255, 0.32),rgb(255, 255, 255)) !important;
+    animation-fill-mode: forwards;
+    animation-play-state: paused; /* 默认暂停动画 */
+    transition: box-shadow 0.2s ease;
+}
+[data-theme=dark] .recent-post-item{
+    background: linear-gradient(90deg, rgba(164, 216, 255, 0.32), rgb(70, 67, 67)) !important;
+    animation-fill-mode: forwards;
+    animation-play-state: paused; /* 默认暂停动画 */
+    transition: box-shadow 0.2s ease;
+}
+.recent-post-item:hover {
+    box-shadow: 0 0 10px rgb(184, 225, 186), /* 第一层阴影，轻微的内发光 */ 0 0 20px rgba(191, 222, 238, 0.45), /* 第二层阴影，更强的内发光 */ 0 0 30px rgb(255, 227, 153) !important; /* 第三层阴影，较弱的外发光 */
+}
+/* 当元素进入视口时的样式 */
+.recent-post-item.active {
+    animation-name: grow; /* 指定动画名称 */
+    animation-play-state: running; /* 开始播放动画 */
+    animation-duration: 0.6s; /* 动画持续时间为0.2秒 */
+}
+
+/* 定义动画关键帧 */
+@keyframes grow {
+    from {
+        transform: scale(0.8); /* 起始状态，元素缩放为0 */
+        filter: blur(10px);
+    }
+    to {
+        transform: scale(1); /* 结束状态，元素恢复原始大小 */
+    }
+}
+

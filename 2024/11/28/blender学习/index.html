@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>blender学习 | 蒜头王八的个人博客</title><meta name="author" content="OrangeLin2312"><meta name="copyright" content="OrangeLin2312"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="blender学习快捷键shift+滚轮&#x3D;&#x3D;&gt;平移 shift+A&#x3D;&#x3D;&gt;添加物体 shift+C&#x3D;&#x3D;&gt;游标迅速回到世界中心， 游标在哪里，东西就添加到哪里（听起来是一个很好用的工具哦 shift+鼠标右键&#x3D;&#x3D;&gt;游标的选择 视图切换 tab键上面的~号键 倒角段数是平滑度 数量就会改变大幅度的形状">
+<meta property="og:type" content="article">
+<meta property="og:title" content="blender学习">
+<meta property="og:url" content="https://orangelin2312.github.io/2024/11/28/blender%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="蒜头王八的个人博客">
+<meta property="og:description" content="blender学习快捷键shift+滚轮&#x3D;&#x3D;&gt;平移 shift+A&#x3D;&#x3D;&gt;添加物体 shift+C&#x3D;&#x3D;&gt;游标迅速回到世界中心， 游标在哪里，东西就添加到哪里（听起来是一个很好用的工具哦 shift+鼠标右键&#x3D;&#x3D;&gt;游标的选择 视图切换 tab键上面的~号键 倒角段数是平滑度 数量就会改变大幅度的形状">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://orangelin2312.github.io/images/banner3.webp">
+<meta property="article:published_time" content="2024-11-28T12:20:22.000Z">
+<meta property="article:modified_time" content="2024-11-29T12:53:48.641Z">
+<meta property="article:author" content="OrangeLin2312">
+<meta property="article:tag" content="blender">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://orangelin2312.github.io/images/banner3.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "blender学习",
+  "url": "https://orangelin2312.github.io/2024/11/28/blender%E5%AD%A6%E4%B9%A0/",
+  "image": "https://orangelin2312.github.io/images/banner3.webp",
+  "datePublished": "2024-11-28T12:20:22.000Z",
+  "dateModified": "2024-11-29T12:53:48.641Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "OrangeLin2312",
+      "url": "https://orangelin2312.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/images/xhx8.ico"><link rel="canonical" href="https://orangelin2312.github.io/2024/11/28/blender%E5%AD%A6%E4%B9%A0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#FFFFB6","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'blender学习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><link rel="stylesheet" href="/styles/css/main.css"><link rel="stylesheet" href="/styles/css/background.css"><link rel="stylesheet" href="/styles/css/shuoshuo.css"><link rel="stylesheet" href="/styles/css/homepage.css"><link rel="stylesheet" href="/styles/css/hometop.css"><link rel="stylesheet" href="/styles/css/postpage.css"><link rel="stylesheet" href="/styles/css/footer.css"><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script><script src="/styles/js/homepage.js"></script><script src="/styles/js/hometop.js"></script><script src="/styles/js/mouseEvents.js"></script><script src="/styles/js/footer.js"></script><script src="/styles/js/firework.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js"></script><meta name="generator" content="Hexo 7.3.0"></head><body><!--#loading-box--><!--  .loading-left-bg--><!--  .loading-right-bg--><!--  .spinner-box--><!--    .configure-border-1--><!--      .configure-core--><!--    .configure-border-2--><!--      .configure-core--><!--    .loading-word= _p('loading')--><div id="loading-box"><div class="gear-loader"><div class="gear-loader_overlay"></div><div class="gear-loader_cogs"><div class="gear-loader_cogs__top"><div class="gear-top_part"></div><div class="gear-top_part"></div><div class="gear-top_part"></div><div class="gear-top_hole"></div></div><div class="gear-loader_cogs__left"><div class="gear-left_part"></div><div class="gear-left_part"></div><div class="gear-left_part"></div><div class="gear-left_hole"></div></div><div class="gear-loader_cogs__bottom"><div class="gear-bottom_part"></div><div class="gear-bottom_part"></div><div class="gear-bottom_part"></div><div class="gear-bottom_hole"></div></div></div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (true) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-image: url(/images/img6.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/dog.jpg" onerror="onerror=null;src='/images/xhx.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-heart"></i><span> 说说</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(/images/banner3.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/images/xhx.gif" alt="Logo"><span class="site-name">蒜头王八的个人博客</span></a><a class="nav-page-title" href="/"><span class="site-name">blender学习</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-heart"></i><span> 说说</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">blender学习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-28T12:20:22.000Z" title="发表于 2024-11-28 20:20:22">2024-11-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-29T12:53:48.641Z" title="更新于 2024-11-29 20:53:48">2024-11-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99%EF%BC%8C%E4%BD%A0%E9%9A%8F%E4%BE%BF%E7%9C%8B%E7%9C%8B/">我随便写写，你随便看看</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">303</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;已经过了&quot;,&quot;messageNext&quot;:&quot;天自上次更新，文章内容可能已过时。&quot;,&quot;postUpdate&quot;:&quot;2024-11-29 20:53:48&quot;}" hidden></div><h1 id="blender学习"><a href="#blender学习" class="headerlink" title="blender学习"></a>blender学习</h1><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>shift+滚轮&#x3D;&#x3D;&gt;平移</p>
+<p>shift+A&#x3D;&#x3D;&gt;添加物体</p>
+<p>shift+C&#x3D;&#x3D;&gt;游标迅速回到世界中心，</p>
+<p>游标在哪里，东西就添加到哪里（听起来是一个很好用的工具哦</p>
+<p>shift+鼠标右键&#x3D;&#x3D;&gt;游标的选择</p>
+<p>视图切换</p>
+<p>tab键上面的~号键</p>
+<h2 id="倒角"><a href="#倒角" class="headerlink" title="倒角"></a>倒角</h2><p>段数是平滑度</p>
+<p><strong>数量</strong>就会改变大幅度的形状了，按下shift会有更精细化的调整</p>
+<p>如果觉得拉伸后很奇怪，要ctrl+A对所选对象进行一个缩放的应用</p>
+<h2 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h2><p>r+x+90</p>
+<p>沿着x轴旋转90°的意思</p>
+<h2 id="隔离模式"><a href="#隔离模式" class="headerlink" title="隔离模式"></a>隔离模式</h2><p>&#x2F;键，单独对某一个模型进行操作</p>
+<h2 id="编辑模式"><a href="#编辑模式" class="headerlink" title="编辑模式"></a>编辑模式</h2><p>快捷键：点 边 面</p>
+<p>对应：1，2，3</p>
+<p>tab切换选中物体的编辑模式</p>
+<p>ctrl+b进行选中边的倒角，鼠标滑轮进行段数增减</p>
+<p>i键&#x3D;&#x3D;&gt;面内缩</p>
+<p><img src="C:\Users\86158\AppData\Roaming\Typora\typora-user-images\image-20240727185810535.png" alt="image-20240727185810535"></p>
+<p>e键&#x3D;&#x3D;&gt;面挤出</p>
+<p>alt选中循环边</p>
+<p>m键合并&#x3D;&#x3D;&gt;按距离合并顶点</p>
+<h2 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h2><p>s+shift+z,锁定z轴缩放其他</p>
+<h2 id="几何原点"><a href="#几何原点" class="headerlink" title="几何原点"></a>几何原点</h2><p>右键&#x3D;&#x3D;&gt;设置原点</p>
+<h2 id="收藏夹"><a href="#收藏夹" class="headerlink" title="收藏夹"></a>收藏夹</h2><p>快捷键q</p>
+<h2 id="表面细分"><a href="#表面细分" class="headerlink" title="表面细分"></a>表面细分</h2><p>ctrl+1\2\3</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://OrangeLin2312.github.io">OrangeLin2312</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://orangelin2312.github.io/2024/11/28/blender%E5%AD%A6%E4%B9%A0/">https://orangelin2312.github.io/2024/11/28/blender%E5%AD%A6%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://OrangeLin2312.github.io" target="_blank">蒜头王八的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/blender/">blender</a></div><div class="post-share"><div class="social-share" data-image="/images/banner3.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/11/28/Go%E8%AF%AD%E8%A8%80%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%BA%94%E7%94%A8%EF%BC%88%E5%81%8F%E5%90%8E%E7%AB%AF)/" title="Go语言的学习与应用（偏后端)"><img class="cover" src="/images/banner.webp" onerror="onerror=null;src='/images/xhx8.png'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Go语言的学习与应用（偏后端)</div></div><div class="info-2"><div class="info-item-1">Go语言的学习与应用（偏后端)golang的中文文档网址http://studygolang.com/pkgdoc go语言的入门01 认识它12go build ***.go//进行编译，生存程序exe再运行go run ***.go//直接进行编译运行  02 数据类型准备工作 必须引入main包 import导入“头文件”  12package mainimport &quot;fmt&quot;  赋值 注意：变量声明了，就一定要用不然会报错 &#x3D;是赋值，:&#x3D;是声明自动推导变量  123456789101112var a int//没有初始化默认为0var a,b intvar c=10d:=30//类型推导，很常用,只能对同一个变量名使用一次d=20var&#123;    a int    b float64&#125;    Println和Printf Println是换行  Printf可以格式化 123a,b:=...</div></div></div></a><a class="pagination-related" href="/2024/11/28/Linux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0(1)/" title="Linux操作系统"><img class="cover" src="/images/banner.webp" onerror="onerror=null;src='/images/xhx8.png'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Linux操作系统</div></div><div class="info-2"><div class="info-item-1">Linux基础命令Linux的目录结构  /，根目录是最顶级的目录了 Linux只有一个顶级目录：/ 路径描述的层次关系同样适用/来表示 &#x2F;home&#x2F;itheima&#x2F;a.txt，表示根目录下的home文件夹内有itheima文件夹，内有a.txt  ls命令功能：列出文件夹信息 语法：ls [-l -h -a] [参数]  参数：被查看的文件夹，不提供参数，表示查看当前工作目录 -l，以列表形式查看 -h，配合-l，以更加人性化的方式显示文件大小 -a，显示隐藏文件  隐藏文件、文件夹在Linux中以.开头的，均是隐藏的。 默认不显示出来，需要-a选项才可查看到。 pwd命令功能：展示当前工作目录 语法：pwd cd命令功能：切换工作目录 语法：cd...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/dog.jpg" onerror="this.onerror=null;this.src='/images/xhx.gif'" alt="avatar"/></div><div class="author-info-name">OrangeLin2312</div><div class="author-info-description">欢迎来到我的第五次元</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/OrangeLin2312"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/OrangeLin2312" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/1471199572@qq.com" target="_blank" title="Email"><i class="fab pen-nib" style="color: #f37f20;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><div>甲乙丙丁四个小伙伴一起去坐车，结果只有甲上了车，其他三个都没上去，为什么呢？因为这是一辆装甲车。</div> <div>这时又来了一辆车，乙和丙上了车，丁却没有上去，因为这是一辆卡丁车。</div> <div>甲乙丙丁在雨天淋了雨，只有丙发烧 为什么 因为烧饼</div> <div>一皇帝上早朝对大臣说：孤的胜，你们都看在眼里，孤的败，然后就下朝了。。。</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#blender%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">blender学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.1.</span> <span class="toc-text">快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%80%92%E8%A7%92"><span class="toc-number">1.2.</span> <span class="toc-text">倒角</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC"><span class="toc-number">1.3.</span> <span class="toc-text">旋转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%94%E7%A6%BB%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">隔离模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.5.</span> <span class="toc-text">编辑模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%A9%E6%94%BE"><span class="toc-number">1.6.</span> <span class="toc-text">缩放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E5%8E%9F%E7%82%B9"><span class="toc-number">1.7.</span> <span class="toc-text">几何原点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E8%97%8F%E5%A4%B9"><span class="toc-number">1.8.</span> <span class="toc-text">收藏夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E9%9D%A2%E7%BB%86%E5%88%86"><span class="toc-number">1.9.</span> <span class="toc-text">表面细分</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/12/07/%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF3%E4%BB%B6%E5%A5%97/" title="学习前端3件套"><img src="/images/banner3.webp" onerror="this.onerror=null;this.src='/images/xhx8.png'" alt="学习前端3件套"/></a><div class="content"><a class="title" href="/2024/12/07/%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF3%E4%BB%B6%E5%A5%97/" title="学习前端3件套">学习前端3件套</a><time datetime="2024-12-07T08:53:43.000Z" title="发表于 2024-12-07 16:53:43">2024-12-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/02/AI%E7%99%BE%E9%97%AE/" title="AI百问"><img src="/images/banner3.webp" onerror="this.onerror=null;this.src='/images/xhx8.png'" alt="AI百问"/></a><div class="content"><a class="title" href="/2024/12/02/AI%E7%99%BE%E9%97%AE/" title="AI百问">AI百问</a><time datetime="2024-12-02T13:41:13.000Z" title="发表于 2024-12-02 21:41:13">2024-12-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/28/Go%E8%AF%AD%E8%A8%80%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%BA%94%E7%94%A8%EF%BC%88%E5%81%8F%E5%90%8E%E7%AB%AF)/" title="Go语言的学习与应用（偏后端)"><img src="/images/banner.webp" onerror="this.onerror=null;this.src='/images/xhx8.png'" alt="Go语言的学习与应用（偏后端)"/></a><div class="content"><a class="title" href="/2024/11/28/Go%E8%AF%AD%E8%A8%80%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%BA%94%E7%94%A8%EF%BC%88%E5%81%8F%E5%90%8E%E7%AB%AF)/" title="Go语言的学习与应用（偏后端)">Go语言的学习与应用（偏后端)</a><time datetime="2024-11-28T12:20:22.000Z" title="发表于 2024-11-28 20:20:22">2024-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/28/blender%E5%AD%A6%E4%B9%A0/" title="blender学习"><img src="/images/banner3.webp" onerror="this.onerror=null;this.src='/images/xhx8.png'" alt="blender学习"/></a><div class="content"><a class="title" href="/2024/11/28/blender%E5%AD%A6%E4%B9%A0/" title="blender学习">blender学习</a><time datetime="2024-11-28T12:20:22.000Z" title="发表于 2024-11-28 20:20:22">2024-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/28/Linux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0(1)/" title="Linux操作系统"><img src="/images/banner.webp" onerror="this.onerror=null;this.src='/images/xhx8.png'" alt="Linux操作系统"/></a><div class="content"><a class="title" href="/2024/11/28/Linux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0(1)/" title="Linux操作系统">Linux操作系统</a><time datetime="2024-11-28T12:20:22.000Z" title="发表于 2024-11-28 20:20:22">2024-11-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By OrangeLin2312</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div id="footer-container"><div class="footer-item1"><div class="fiem">欢迎来到我的第五次元。</div><div class="fiem">特别鸣谢浣熊静态以及动图贡献者@弗雷</div><button onclick="firework">🎇感谢你的到来，点击我给你放烟花看！</button></div><div class="footer-item2"><div class="fiem"><a #="#">我的说说</a></div><div class="fiem"><a #="#">关于蒜头王八</a></div><div class="fiem"><a #="#">我的归档</a></div><div class="fiem"><a #="#">逛逛主页</a></div><div class="fiem"><a #="#">看看文章分类</a></div><div class="fiem"><a #="#">看看文章标签</a></div><div class="fiem"><a #="#">去留言！！</a></div><div class="fiem"><a #="#">看看我的朋友圈</a></div><div class="fiem"><a #="#">看看我的音乐</a></div></div><div class="footer-item3"><div class="fitem">这里空空如也~不知道写什么好</div></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.css"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="12860445508" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="true" data-order="random" data-preload="none" data-autoplay="true" muted></div><script src="/styles/js/fish.js"></script><script src="/js/main.js"></script><script src="/styles/js/footer.js"></script><script id="canvas_nest" defer="defer" color="255,230,130" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="你是坠棒的！,我是最棒的！,社会你我他,文明靠大家" data-fontsize="25px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="请输入关键词&lt;(￣︶￣)↗[GO!]" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

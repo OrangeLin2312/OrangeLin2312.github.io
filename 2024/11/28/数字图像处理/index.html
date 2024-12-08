@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数字图像处理 | 蒜头王八的个人博客</title><meta name="author" content="OrangeLin2312"><meta name="copyright" content="OrangeLin2312"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数字图像处理认识OpenCV加载的彩色图像处于BGR模式。但是Matplotlib以RGB模式显示。因此，如果使用OpenCV读取彩色图像，则Matplotlib中将无法正确显示彩色图像。有关更多详细信息，请参见练习。 读取图像使用cv.imread()函数读取图像。图像应该在工作目录或图像的完整路径应给出。 第二个参数是一个标志，它指定了读取图像的方式。  cv.IMREAD_COLOR： 加载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字图像处理">
+<meta property="og:url" content="https://orangelin2312.github.io/2024/11/28/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/index.html">
+<meta property="og:site_name" content="蒜头王八的个人博客">
+<meta property="og:description" content="数字图像处理认识OpenCV加载的彩色图像处于BGR模式。但是Matplotlib以RGB模式显示。因此，如果使用OpenCV读取彩色图像，则Matplotlib中将无法正确显示彩色图像。有关更多详细信息，请参见练习。 读取图像使用cv.imread()函数读取图像。图像应该在工作目录或图像的完整路径应给出。 第二个参数是一个标志，它指定了读取图像的方式。  cv.IMREAD_COLOR： 加载">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://orangelin2312.github.io/images/banner.webp">
+<meta property="article:published_time" content="2024-11-28T12:20:22.000Z">
+<meta property="article:modified_time" content="2024-11-29T13:00:43.335Z">
+<meta property="article:author" content="OrangeLin2312">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="图像">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://orangelin2312.github.io/images/banner.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "数字图像处理",
+  "url": "https://orangelin2312.github.io/2024/11/28/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/",
+  "image": "https://orangelin2312.github.io/images/banner.webp",
+  "datePublished": "2024-11-28T12:20:22.000Z",
+  "dateModified": "2024-11-29T13:00:43.335Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "OrangeLin2312",
+      "url": "https://orangelin2312.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/images/xhx8.ico"><link rel="canonical" href="https://orangelin2312.github.io/2024/11/28/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#FFFFB6","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数字图像处理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><link rel="stylesheet" href="/styles/css/main.css"><link rel="stylesheet" href="/styles/css/background.css"><link rel="stylesheet" href="/styles/css/shuoshuo.css"><link rel="stylesheet" href="/styles/css/homepage.css"><link rel="stylesheet" href="/styles/css/hometop.css"><link rel="stylesheet" href="/styles/css/postpage.css"><link rel="stylesheet" href="/styles/css/footer.css"><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script><script src="/styles/js/homepage.js"></script><script src="/styles/js/hometop.js"></script><script src="/styles/js/mouseEvents.js"></script><script src="/styles/js/footer.js"></script><script src="/styles/js/firework.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js"></script><meta name="generator" content="Hexo 7.3.0"></head><body><!--#loading-box--><!--  .loading-left-bg--><!--  .loading-right-bg--><!--  .spinner-box--><!--    .configure-border-1--><!--      .configure-core--><!--    .configure-border-2--><!--      .configure-core--><!--    .loading-word= _p('loading')--><div id="loading-box"><div class="gear-loader"><div class="gear-loader_overlay"></div><div class="gear-loader_cogs"><div class="gear-loader_cogs__top"><div class="gear-top_part"></div><div class="gear-top_part"></div><div class="gear-top_part"></div><div class="gear-top_hole"></div></div><div class="gear-loader_cogs__left"><div class="gear-left_part"></div><div class="gear-left_part"></div><div class="gear-left_part"></div><div class="gear-left_hole"></div></div><div class="gear-loader_cogs__bottom"><div class="gear-bottom_part"></div><div class="gear-bottom_part"></div><div class="gear-bottom_part"></div><div class="gear-bottom_hole"></div></div></div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (true) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-image: url(/images/img6.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/dog.jpg" onerror="onerror=null;src='/images/xhx.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-heart"></i><span> 说说</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(/images/banner.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/images/xhx.gif" alt="Logo"><span class="site-name">蒜头王八的个人博客</span></a><a class="nav-page-title" href="/"><span class="site-name">数字图像处理</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-heart"></i><span> 说说</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">数字图像处理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-28T12:20:22.000Z" title="发表于 2024-11-28 20:20:22">2024-11-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-29T13:00:43.335Z" title="更新于 2024-11-29 21:00:43">2024-11-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99%EF%BC%8C%E4%BD%A0%E9%9A%8F%E4%BE%BF%E7%9C%8B%E7%9C%8B/">我随便写写，你随便看看</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">3.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;已经过了&quot;,&quot;messageNext&quot;:&quot;天自上次更新，文章内容可能已过时。&quot;,&quot;postUpdate&quot;:&quot;2024-11-29 21:00:43&quot;}" hidden></div><h1 id="数字图像处理"><a href="#数字图像处理" class="headerlink" title="数字图像处理"></a>数字图像处理</h1><h2 id="认识"><a href="#认识" class="headerlink" title="认识"></a>认识</h2><p><strong>OpenCV加载的彩色图像处于BGR模式</strong>。但是Matplotlib以RGB模式显示。因此，如果使用OpenCV读取彩色图像，则Matplotlib中将无法正确显示彩色图像。有关更多详细信息，请参见练习。</p>
+<h3 id="读取图像"><a href="#读取图像" class="headerlink" title="读取图像"></a>读取图像</h3><p>使用<strong>cv.imread</strong>()函数读取图像。图像应该在工作目录或图像的完整路径应给出。</p>
+<p>第二个参数是一个标志，它指定了读取图像的方式。</p>
+<ul>
+<li>cv.IMREAD_COLOR： 加载彩色图像。任何图像的透明度都会被忽视。它是默认标志。</li>
+<li>cv.IMREAD_GRAYSCALE：以灰度模式加载图像</li>
+<li>cv.IMREAD_UNCHANGED：加载图像，包括alpha通道</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong> 除了这三个标志，你可以分别简单地传递整数1、0或-1。</p>
+</blockquote>
+<p>请参见下面的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"></span><br><span class="line">＃加载彩色灰度图像</span><br><span class="line">img = cv.imread(<span class="string">&#x27;messi5.jpg&#x27;</span>，<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="显示图像"><a href="#显示图像" class="headerlink" title="显示图像"></a>显示图像</h3><p>使用函数**cv.imshow()**在窗口中显示图像。窗口自动适合图像尺寸。</p>
+<p>第一个参数是窗口名称，它是一个字符串。第二个参数是我们的对象。你可以根据需要创建任意多个窗口，但可以使用不同的窗口名称。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cv.imshow(<span class="string">&quot;gezi&quot;</span>,img)</span><br><span class="line">cv.waitKey(<span class="number">0</span>);<span class="comment">##可以传入等号左边一个k值表示传入键值（如下</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<p><strong>cv.waitKey</strong>()是一个键盘绑定函数。其参数是以毫秒为单位的时间。该函数等待任何键盘事件指定的毫秒。如果您在这段时间内按下任何键，程序将继续运行。如果<strong>0</strong>被传递，它将无限期地等待一次敲击键。它也可以设置为检测特定的按键</p>
+<h3 id="写入图像"><a href="#写入图像" class="headerlink" title="写入图像"></a>写入图像</h3><p>使用函数<strong>cv.imwrite</strong>()保存图像。第一个参数是文件名，第二个参数是要保存的图像。 <code>cv.imwrite(&#39;messigray.png&#39;，img)</code>这会将图像以PNG格式保存在工作目录中。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line">img = cv.imread(<span class="string">&#x27;messi5.jpg&#x27;</span>,<span class="number">0</span>)</span><br><span class="line">cv.imshow(<span class="string">&#x27;image&#x27;</span>,img)</span><br><span class="line">k = cv.waitKey(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> k == <span class="number">27</span>:         <span class="comment"># 等待ESC退出</span></span><br><span class="line">    cv.destroyAllWindows()</span><br><span class="line"><span class="keyword">elif</span> k == <span class="built_in">ord</span>(<span class="string">&#x27;s&#x27;</span>): <span class="comment"># 等待关键字，保存和退出</span></span><br><span class="line">    cv.imwrite(<span class="string">&#x27;messigray.png&#x27;</span>,img)</span><br><span class="line">    cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="使用Matplotlib"><a href="#使用Matplotlib" class="headerlink" title="使用Matplotlib"></a>使用Matplotlib</h3><p>Matplotlib是Python的绘图库，可为你提供多种绘图方法。你将在接下来的文章中看到它们。在这里，你将学习如何使用Matplotlib显示图像。你可以使用Matplotlib缩放图像，保存图像等。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line">img = cv.imread(<span class="string">&#x27;messi5.jpg&#x27;</span>,<span class="number">0</span>)</span><br><span class="line">plt.imshow(img, cmap = <span class="string">&#x27;gray&#x27;</span>, interpolation = <span class="string">&#x27;bicubic&#x27;</span>)</span><br><span class="line">plt.xticks([]), plt.yticks([])  <span class="comment"># 隐藏 x 轴和 y 轴上的刻度值</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h4 id="plt的具体使用"><a href="#plt的具体使用" class="headerlink" title="plt的具体使用"></a>plt的具体使用</h4><p>在任何绘图之前，我们需要一个Figure对象，可以理解成我们需要一张画板才能开始绘图。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">fig = plt.figure()</span><br></pre></td></tr></table></figure>
+
+<p>在拥有Figure对象之后，在作画前我们还需要轴，没有轴的话就没有绘图基准，所以需要添加Axes。也可以理解成为真正可以作画的纸。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fig = plt.figure()</span><br><span class="line">ax = fig.add_subplot(<span class="number">111</span>)</span><br><span class="line">ax.<span class="built_in">set</span>(xlim=[<span class="number">0.5</span>, <span class="number">4.5</span>], ylim=[-<span class="number">2</span>, <span class="number">8</span>], title=<span class="string">&#x27;An Example Axes&#x27;</span>,</span><br><span class="line">       ylabel=<span class="string">&#x27;Y-Axis&#x27;</span>, xlabel=<span class="string">&#x27;X-Axis&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>对于上面的fig.add_subplot(111)就是添加Axes的，</p>
+<p>参数的解释：</p>
+<p>在画板的第1行第1列的第一个位置生成一个Axes对象来准备作画。也可以通过fig.add_subplot(2, 2, 1)的方式生成Axes，前面两个参数确定了面板的划分，例如 <code>2， 2会将整个面板划分成 2 * 2 的方格</code>，第三个参数取值范围是 [1, 2*2] 表示第几个Axes。如下面的例子：</p>
+<h2 id="绘制操作"><a href="#绘制操作" class="headerlink" title="绘制操作"></a>绘制操作</h2><p>在上述所有功能中，您将看到一些常见的参数，如下所示：</p>
+<ul>
+<li>img：您要绘制形状的图像</li>
+<li>color：形状的颜色。对于BGR，将其作为元组传递，例如：(255,0,0)对于蓝色。对于灰度，只需传递标量值即可。</li>
+<li>厚度：线或圆等的粗细。如果对闭合图形（如圆）传递<code>-1</code> ，它将填充形状。<em>默认厚度&#x3D; 1</em></li>
+<li>lineType：线的类型，是否为8连接线，抗锯齿线等。<em>默认情况下</em>，为8连接线。<strong>cv.LINE_AA</strong>给出了抗锯齿的线条，看起来非常适合曲线。</li>
+</ul>
+<h4 id="绘制直线"><a href="#绘制直线" class="headerlink" title="绘制直线"></a>绘制直线</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.line(img,start,end,color,thickness)</span><br></pre></td></tr></table></figure>
+
+<p>参数：</p>
+<ul>
+<li>img:要绘制直线的图像</li>
+<li>Start,end: 直线的起点和终点</li>
+<li>color: 线条的颜色</li>
+<li>Thickness: 线条宽度</li>
+</ul>
+<h4 id="绘制圆形"><a href="#绘制圆形" class="headerlink" title="绘制圆形"></a>绘制圆形</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.circle(img,centerpoint, r, color, thickness)</span><br></pre></td></tr></table></figure>
+
+<p>参数：</p>
+<ul>
+<li>img:要绘制圆形的图像</li>
+<li>Centerpoint, r: 圆心和半径</li>
+<li>color: 线条的颜色</li>
+<li>Thickness: 线条宽度，为-1时生成闭合图案并填充颜色</li>
+</ul>
+<h4 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.rectangle(img,leftupper,rightdown,color,thickness)</span><br></pre></td></tr></table></figure>
+
+<p>参数：</p>
+<ul>
+<li>img:要绘制矩形的图像</li>
+<li>Leftupper, rightdown: 矩形的左上角和右下角坐标</li>
+<li>color: 线条的颜色</li>
+<li>Thickness: 线条宽度</li>
+</ul>
+<h3 id="向图像中添加文字"><a href="#向图像中添加文字" class="headerlink" title="向图像中添加文字"></a>向图像中添加文字</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.putText(img,text,station, font, fontsize,color,thickness,cv.LINE_AA)</span><br></pre></td></tr></table></figure>
+
+<p>参数：</p>
+<ul>
+<li>img: 图像</li>
+<li>text：要写入的文本数据</li>
+<li>station：文本的放置位置</li>
+<li>font：字体</li>
+<li>Fontsize :字体大小</li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h3><p>我们生成一个全黑的图像，然后在里面绘制图像并添加文字</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment"># 1 创建一个空白的图像</span></span><br><span class="line">img = np.zeros((<span class="number">512</span>,<span class="number">512</span>,<span class="number">3</span>), np.uint8)</span><br><span class="line"><span class="comment"># 2 绘制图形</span></span><br><span class="line">cv.line(img,(<span class="number">0</span>,<span class="number">0</span>),(<span class="number">511</span>,<span class="number">511</span>),(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">5</span>)</span><br><span class="line">cv.rectangle(img,(<span class="number">384</span>,<span class="number">0</span>),(<span class="number">510</span>,<span class="number">128</span>),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">3</span>)</span><br><span class="line">cv.circle(img,(<span class="number">447</span>,<span class="number">63</span>), <span class="number">63</span>, (<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>), -<span class="number">1</span>)</span><br><span class="line">font = cv.FONT_HERSHEY_SIMPLEX</span><br><span class="line">cv.putText(img,<span class="string">&#x27;OpenCV&#x27;</span>,(<span class="number">10</span>,<span class="number">500</span>), font, <span class="number">4</span>,(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>),<span class="number">2</span>,cv.LINE_AA)</span><br><span class="line"><span class="comment"># 3 图像展示</span></span><br><span class="line">plt.imshow(img[:,:,::-<span class="number">1</span>])</span><br><span class="line">plt.title(<span class="string">&#x27;匹配结果&#x27;</span>), plt.xticks([]), plt.yticks([])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">zeros(): 这是NumPy库中的函数，用于创建指定形状的全零数组。</span><br><span class="line"></span><br><span class="line">(<span class="number">512</span>, <span class="number">512</span>, <span class="number">3</span>): 这个元组表示了数组的形状。在这里，(<span class="number">512</span>, <span class="number">512</span>, <span class="number">3</span>)表示创建一个三维数组，其中第一个维度长度为<span class="number">512</span>，第二个维度长度为<span class="number">512</span>，第三个维度长度为<span class="number">3</span>。这种形式通常用于表示彩色图像，其中<span class="number">512</span>x512表示图像的高度和宽度，<span class="number">3</span>表示图像的RGB通道。</span><br><span class="line"></span><br><span class="line">因此，通过zeros((<span class="number">512</span>, <span class="number">512</span>, <span class="number">3</span>))这行代码可以创建一个大小为<span class="number">512</span>x512的全零三维数组，用于表示一个黑色的<span class="number">512</span>x512像素的彩色图像。</span><br></pre></td></tr></table></figure>
+
+<h3 id="鼠标绘制"><a href="#鼠标绘制" class="headerlink" title="鼠标绘制"></a>鼠标绘制</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line">drawing = <span class="literal">False</span> <span class="comment"># 如果按下鼠标，则为真</span></span><br><span class="line">mode = <span class="literal">True</span> <span class="comment"># 如果为真，绘制矩形。按 m 键可以切换到曲线</span></span><br><span class="line">ix,iy = -<span class="number">1</span>,-<span class="number">1</span></span><br><span class="line"><span class="comment"># 鼠标回调函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_circle</span>(<span class="params">event,x,y,flags,param</span>):</span><br><span class="line">    <span class="keyword">global</span> ix,iy,drawing,mode</span><br><span class="line">    <span class="keyword">if</span> event == cv.EVENT_LBUTTONDOWN:</span><br><span class="line">        drawing = <span class="literal">True</span></span><br><span class="line">        ix,iy = x,y</span><br><span class="line">    <span class="keyword">elif</span> event == cv.EVENT_MOUSEMOVE:</span><br><span class="line">        <span class="keyword">if</span> drawing == <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">if</span> mode == <span class="literal">True</span>:</span><br><span class="line">                cv.rectangle(img,(ix,iy),(x,y),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),-<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cv.circle(img,(x,y),<span class="number">5</span>,(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),-<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">elif</span> event == cv.EVENT_LBUTTONUP:</span><br><span class="line">        drawing = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> mode == <span class="literal">True</span>:</span><br><span class="line">            cv.rectangle(img,(ix,iy),(x,y),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),-<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cv.circle(img,(x,y),<span class="number">5</span>,(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),-<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">elif</span> event == cv.EVENT_RBUTTONUP:</span><br><span class="line">        mode=<span class="keyword">not</span> mode;</span><br><span class="line"><span class="comment"># 创建一个黑色的图像，一个窗口，并绑定到窗口的功能</span></span><br><span class="line">img = np.zeros((<span class="number">512</span>,<span class="number">512</span>,<span class="number">3</span>), np.uint8)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;image&#x27;</span>)</span><br><span class="line"><span class="comment"># 鼠标回调函数</span></span><br><span class="line">cv.setMouseCallback(<span class="string">&#x27;image&#x27;</span>,draw_circle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;image&#x27;</span>,img)</span><br><span class="line">    <span class="keyword">if</span> cv.waitKey(<span class="number">20</span>) &amp; <span class="number">0xFF</span> == <span class="number">27</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>global 关键字用于声明在函数内部使用全局变量。</p>
+<p>逻辑非运算符 not</p>
+<h3 id="轨迹栏"><a href="#轨迹栏" class="headerlink" title="轨迹栏"></a>轨迹栏</h3><p>在这里，我们将创建一个简单的应用程序，以显示您指定的颜色。您有一个显示颜色的窗口，以及三个用于指定B、G、R颜色的跟踪栏。滑动轨迹栏，并相应地更改窗口颜色。默认情况下，初始颜色将设置为黑色。</p>
+<p>对于<code>cv.getTrackbarPos()</code>函数，第一个参数是轨迹栏名称，第二个参数是它附加到的窗口名称，第三个参数是默认值，第四个参数是最大值，第五个是执行的回调函数每次跟踪栏值更改。回调函数始终具有默认参数，即轨迹栏位置。在我们的例子中，函数什么都不做，所以我们简单地通过。</p>
+<p>轨迹栏的另一个重要应用是将其用作按钮或开关。默认情况下，OpenCV不具有按钮功能。因此，您可以使用轨迹栏获得此类功能。在我们的应用程序中，我们创建了一个开关，只有在该开关为ON的情况下，该应用程序才能在其中运行，否则屏幕始终为黑色。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">nothing</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="comment"># 创建一个黑色的图像，一个窗口</span></span><br><span class="line">img = np.zeros((<span class="number">300</span>,<span class="number">512</span>,<span class="number">3</span>), np.uint8)</span><br><span class="line">cv.namedWindow(<span class="string">&#x27;image&#x27;</span>)</span><br><span class="line"><span class="comment"># 创建颜色变化的轨迹栏</span></span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;R&#x27;</span>,<span class="string">&#x27;image&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,nothing)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;G&#x27;</span>,<span class="string">&#x27;image&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,nothing)</span><br><span class="line">cv.createTrackbar(<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;image&#x27;</span>,<span class="number">0</span>,<span class="number">255</span>,nothing)</span><br><span class="line"><span class="comment"># 为 ON/OFF 功能创建开关</span></span><br><span class="line">switch = <span class="string">&#x27;0 : OFF \n1 : ON&#x27;</span></span><br><span class="line">cv.createTrackbar(switch, <span class="string">&#x27;image&#x27;</span>,<span class="number">0</span>,<span class="number">1</span>,nothing)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv.imshow(<span class="string">&#x27;image&#x27;</span>,img)</span><br><span class="line">    k = cv.waitKey(<span class="number">1</span>) &amp; <span class="number">0xFF</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">27</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="comment"># 得到四条轨迹的当前位置</span></span><br><span class="line">    r = cv.getTrackbarPos(<span class="string">&#x27;R&#x27;</span>,<span class="string">&#x27;image&#x27;</span>)</span><br><span class="line">    g = cv.getTrackbarPos(<span class="string">&#x27;G&#x27;</span>,<span class="string">&#x27;image&#x27;</span>)</span><br><span class="line">    b = cv.getTrackbarPos(<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;image&#x27;</span>):</span><br><span class="line">    s = cv.getTrackbarPos(switch,<span class="string">&#x27;image&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> s == <span class="number">0</span>:</span><br><span class="line">        img[:] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        img[:] = [b,g,r]</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>img[:]是img的所有元素</p>
+<h3 id="获取并修改图像中的像素点"><a href="#获取并修改图像中的像素点" class="headerlink" title="获取并修改图像中的像素点"></a>获取并修改图像中的像素点</h3><p>我们可以通过行和列的坐标值获取该像素点的像素值。对于BGR图像，它返回一个蓝，绿，红值的数组。对于灰度图像，仅返回相应的强度值。使用相同的方法对像素值进行修改。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line">img = cv.imread(<span class="string">&#x27;messi5.jpg&#x27;</span>)</span><br><span class="line"><span class="comment"># 获取某个像素点的值</span></span><br><span class="line">px = img[<span class="number">100</span>,<span class="number">100</span>]</span><br><span class="line"><span class="comment"># 仅获取蓝色通道的强度值</span></span><br><span class="line">blue = img[<span class="number">100</span>,<span class="number">100</span>,<span class="number">0</span>]</span><br><span class="line"><span class="comment"># 修改某个位置的像素值</span></span><br><span class="line">img[<span class="number">100</span>,<span class="number">100</span>] = [<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取图像的属性"><a href="#获取图像的属性" class="headerlink" title="获取图像的属性"></a>获取图像的属性</h3><p>图像属性包括行数，列数和通道数，图像数据类型，像素数等。</p>
+<p><img src="C:\Users\86158\AppData\Roaming\Typora\typora-user-images\image-20240319154823884.png" alt="image-20191016151042764"></p>
+<h3 id="图像通道的拆分与合并"><a href="#图像通道的拆分与合并" class="headerlink" title="图像通道的拆分与合并"></a>图像通道的拆分与合并</h3><p>有时需要在B，G，R通道图像上单独工作。在这种情况下，需要将BGR图像分割为单个通道。或者在其他情况下，可能需要将这些单独的通道合并到BGR图像。你可以通过以下方式完成。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通道拆分</span></span><br><span class="line">b,g,r = cv.split(img)</span><br><span class="line"><span class="comment"># 通道合并</span></span><br><span class="line">img = cv.merge((b,g,r))</span><br></pre></td></tr></table></figure>
+
+<h3 id="色彩空间的改变"><a href="#色彩空间的改变" class="headerlink" title="色彩空间的改变"></a>色彩空间的改变</h3><p>OpenCV中有150多种颜色空间转换方法。最广泛使用的转换方法有两种，BGR↔Gray和BGR↔HSV。</p>
+<p>API：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.cvtColor(input_image，flag)</span><br></pre></td></tr></table></figure>
+
+<p>参数：</p>
+<ul>
+<li>input_image: 进行颜色空间转换的图像</li>
+<li>flag: 转换类型<ul>
+<li>cv.COLOR_BGR2GRAY : BGR↔Gray</li>
+<li>cv.COLOR_BGR2HSV: BGR→HSV</li>
+</ul>
+</li>
+</ul>
+<h2 id="傅里叶变换"><a href="#傅里叶变换" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h2><p>当我们谈论图像处理时，傅里叶变换是一项非常重要的工具。傅里叶变换可以将一个图像从空间域（时域）转换到频域，从而<strong>揭示图像中不同频率的成分</strong>。在频域中，图像可以表示为由不同频率的正弦和余弦函数组成的复杂图案。</p>
+<p><code>傅里叶变换的基本思想是将一个信号（包括图像）分解为一系列不同频率的正弦和余弦波形</code>，每个波形都有特定的振幅和相位。这样做的好处是，通过查看图像的频谱，我们可以分析图像中不同频率的成分，并且可以在频域中对图像进行各种操作，例如滤波、增强特定频率的成分等。</p>
+<p><code>频域滤波是在频域中对图像进行滤波操作的过程</code>。通过对图像的频谱进行操作，<code>我们可以滤除或增强图像中特定频率的成分</code>。<strong>这种方法在图像去噪、边缘检测、图像增强等方面都有广泛的应用</strong>。</p>
+<p>常见的频域滤波包括：</p>
+<p><strong>低通滤波器</strong>：滤除高频成分，保留图像中的低频信息，<strong>常用于图像去噪</strong>。<br>  <strong>高通滤波器</strong>：滤除低频成分，保留图像中的高频信息，<strong>常用于边缘检测</strong>。<br>  <strong>带通滤波器</strong>：只保留某个频率范围内的成分，常用于图像增强和特定频率的提取。<br>通过在频域中对图像进行滤波操作，我们可以实现一些在空间域中难以实现的图像处理任务，同时也可以更好地理解图像的频率特性.</p>
+<p>对于图像，使用<strong>2D离散傅里叶变换</strong>(DFT)查找频域。一种称为<strong>快速傅立叶变换</strong>(FFT)的快速算法用于DFT的计算。</p>
+<h3 id="numpy实现"><a href="#numpy实现" class="headerlink" title="numpy实现"></a>numpy实现</h3><p><strong>傅里叶变换可逆</strong>，傅里叶变换是为了得到图片低频和高频做不同的处理。</p>
+<p>numpy.fft.fft2:实现傅里叶变换，傅里叶变换返回的是一个复数数组</p>
+<p>numpy.fft.fftshiift：将0频域移到频谱中心（低频</p>
+<p>20*np.log(np.abs(fshift)):将复数变成灰度图</p>
+<p>以上只是得到频谱信息。低频是细节信息，高频是边缘信息。</p>
+<p>进行低频或者高频处理之后，进行图像逆变换（即恢复原始图像），处理的信息也会反应在原始图像上。</p>
+<h2 id="逆傅里叶变换"><a href="#逆傅里叶变换" class="headerlink" title="逆傅里叶变换"></a>逆傅里叶变换</h2><h3 id="numpy实现-1"><a href="#numpy实现-1" class="headerlink" title="numpy实现"></a>numpy实现</h3><p>numpy.fft.iffshift:fftshiift的逆函数。（中心0频域又回到左上角</p>
+<p>numpy.fft.ifft2:逆变换</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://OrangeLin2312.github.io">OrangeLin2312</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://orangelin2312.github.io/2024/11/28/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">https://orangelin2312.github.io/2024/11/28/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://OrangeLin2312.github.io" target="_blank">蒜头王八的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/%E5%9B%BE%E5%83%8F/">图像</a></div><div class="post-share"><div class="social-share" data-image="/images/banner.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/11/28/%E4%B8%80%E5%8D%8A%E7%9A%84Java/" title="Java乱七八糟的学习"><img class="cover" src="/images/banner.webp" onerror="onerror=null;src='/images/xhx8.png'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Java乱七八糟的学习</div></div><div class="info-2"><div class="info-item-1">SpringBootRedis入门 因为是kv存储在内存里，所以，查询速度会比mysql快很多  Java回炉重造增强循环在 Java 中，增强的 for 循环（即 for (String str : split)）只是对数组中每个元素的副本进行操作，不会改变原始数组 split 的内容。如果你需要修改数组中的元素，你应该使用传统的 for 循环来进行操作，例如： 123for (int i = 0; i &lt; split.length; i++) &#123;    split[i] = Integer.toBinaryString(Integer.parseInt(split[i]));&#125;  这样可以直接修改 split 数组中的每个元素。 内存分配   关于数组的内存 关于方法的内存 值传递 这个是方法的值传递，形参在方法中的改变不会影响数组的值。 引用类型传递 引用类型直接到堆中改变的值，所以是可以影响到本来数组的值的。 字符串 注意看注释，其实还蛮有用的（对于计算机网络来说 new String(b, 0, len) 是创建一个新的字符串对象的语法，其中...</div></div></div></a><a class="pagination-related" href="/2024/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络"><img class="cover" src="/images/banner.webp" onerror="onerror=null;src='/images/xhx8.png'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">计算机网络</div></div><div class="info-2"><div class="info-item-1">1.0认识计算机网络1.1.1计算机网络功能  1.1.2组成与分类  总结：  1.1.4性能指标速率  带宽  带宽可以理解为发送的最高速率：向通信线路发送 传播速率：顾名思义是传播的速度 一个是生蛋，一个是送蛋。 吞吐量  时延 注意：传输时延和传播时延不一样，传输时延&#x3D;发送时延   往返时延：是从发送方将第一个数据放到信道上开始   信道利用率是会重点考察的  总结：  1.2.1分层结构、协议、接口、服务 **  总结：  1.2.2IOS参考模型    过程要记住          1.2.3TCP&#x2F;IP    2.0物理层（选择题2.1.1基本概念 </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/dog.jpg" onerror="this.onerror=null;this.src='/images/xhx.gif'" alt="avatar"/></div><div class="author-info-name">OrangeLin2312</div><div class="author-info-description">欢迎来到我的第五次元</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/OrangeLin2312"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/OrangeLin2312" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/1471199572@qq.com" target="_blank" title="Email"><i class="fab pen-nib" style="color: #f37f20;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><div>甲乙丙丁四个小伙伴一起去坐车，结果只有甲上了车，其他三个都没上去，为什么呢？因为这是一辆装甲车。</div> <div>这时又来了一辆车，乙和丙上了车，丁却没有上去，因为这是一辆卡丁车。</div> <div>甲乙丙丁在雨天淋了雨，只有丙发烧 为什么 因为烧饼</div> <div>一皇帝上早朝对大臣说：孤的胜，你们都看在眼里，孤的败，然后就下朝了。。。</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">数字图像处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text">认识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E5%9B%BE%E5%83%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">读取图像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E5%9B%BE%E5%83%8F"><span class="toc-number">1.1.2.</span> <span class="toc-text">显示图像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E5%9B%BE%E5%83%8F"><span class="toc-number">1.1.3.</span> <span class="toc-text">写入图像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Matplotlib"><span class="toc-number">1.2.1.</span> <span class="toc-text">使用Matplotlib</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#plt%E7%9A%84%E5%85%B7%E4%BD%93%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">plt的具体使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">绘制操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E7%9B%B4%E7%BA%BF"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">绘制直线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E5%9C%86%E5%BD%A2"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">绘制圆形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E7%9F%A9%E5%BD%A2"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">绘制矩形</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E5%9B%BE%E5%83%8F%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%96%87%E5%AD%97"><span class="toc-number">1.3.1.</span> <span class="toc-text">向图像中添加文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.2.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="toc-number">1.3.3.</span> <span class="toc-text">效果展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BC%A0%E6%A0%87%E7%BB%98%E5%88%B6"><span class="toc-number">1.3.4.</span> <span class="toc-text">鼠标绘制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%A8%E8%BF%B9%E6%A0%8F"><span class="toc-number">1.3.5.</span> <span class="toc-text">轨迹栏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%B9%B6%E4%BF%AE%E6%94%B9%E5%9B%BE%E5%83%8F%E4%B8%AD%E7%9A%84%E5%83%8F%E7%B4%A0%E7%82%B9"><span class="toc-number">1.3.6.</span> <span class="toc-text">获取并修改图像中的像素点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%9B%BE%E5%83%8F%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.7.</span> <span class="toc-text">获取图像的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E9%80%9A%E9%81%93%E7%9A%84%E6%8B%86%E5%88%86%E4%B8%8E%E5%90%88%E5%B9%B6"><span class="toc-number">1.3.8.</span> <span class="toc-text">图像通道的拆分与合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E7%9A%84%E6%94%B9%E5%8F%98"><span class="toc-number">1.3.9.</span> <span class="toc-text">色彩空间的改变</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2"><span class="toc-number">1.4.</span> <span class="toc-text">傅里叶变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#numpy%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.4.1.</span> <span class="toc-text">numpy实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%86%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2"><span class="toc-number">1.5.</span> <span class="toc-text">逆傅里叶变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#numpy%E5%AE%9E%E7%8E%B0-1"><span class="toc-number">1.5.1.</span> <span class="toc-text">numpy实现</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/12/07/%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF3%E4%BB%B6%E5%A5%97/" title="学习前端3件套"><img src="/images/banner3.webp" onerror="this.onerror=null;this.src='/images/xhx8.png'" alt="学习前端3件套"/></a><div class="content"><a class="title" href="/2024/12/07/%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF3%E4%BB%B6%E5%A5%97/" title="学习前端3件套">学习前端3件套</a><time datetime="2024-12-07T08:53:43.000Z" title="发表于 2024-12-07 16:53:43">2024-12-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/02/AI%E7%99%BE%E9%97%AE/" title="AI百问"><img src="/images/banner3.webp" onerror="this.onerror=null;this.src='/images/xhx8.png'" alt="AI百问"/></a><div class="content"><a class="title" href="/2024/12/02/AI%E7%99%BE%E9%97%AE/" title="AI百问">AI百问</a><time datetime="2024-12-02T13:41:13.000Z" title="发表于 2024-12-02 21:41:13">2024-12-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/28/Go%E8%AF%AD%E8%A8%80%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%BA%94%E7%94%A8%EF%BC%88%E5%81%8F%E5%90%8E%E7%AB%AF)/" title="Go语言的学习与应用（偏后端)"><img src="/images/banner.webp" onerror="this.onerror=null;this.src='/images/xhx8.png'" alt="Go语言的学习与应用（偏后端)"/></a><div class="content"><a class="title" href="/2024/11/28/Go%E8%AF%AD%E8%A8%80%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%BA%94%E7%94%A8%EF%BC%88%E5%81%8F%E5%90%8E%E7%AB%AF)/" title="Go语言的学习与应用（偏后端)">Go语言的学习与应用（偏后端)</a><time datetime="2024-11-28T12:20:22.000Z" title="发表于 2024-11-28 20:20:22">2024-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/28/blender%E5%AD%A6%E4%B9%A0/" title="blender学习"><img src="/images/banner3.webp" onerror="this.onerror=null;this.src='/images/xhx8.png'" alt="blender学习"/></a><div class="content"><a class="title" href="/2024/11/28/blender%E5%AD%A6%E4%B9%A0/" title="blender学习">blender学习</a><time datetime="2024-11-28T12:20:22.000Z" title="发表于 2024-11-28 20:20:22">2024-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/28/Linux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0(1)/" title="Linux操作系统"><img src="/images/banner.webp" onerror="this.onerror=null;this.src='/images/xhx8.png'" alt="Linux操作系统"/></a><div class="content"><a class="title" href="/2024/11/28/Linux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0(1)/" title="Linux操作系统">Linux操作系统</a><time datetime="2024-11-28T12:20:22.000Z" title="发表于 2024-11-28 20:20:22">2024-11-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By OrangeLin2312</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div id="footer-container"><div class="footer-item1"><div class="fiem">欢迎来到我的第五次元。</div><div class="fiem">特别鸣谢浣熊静态以及动图贡献者@弗雷</div><button onclick="firework">🎇感谢你的到来，点击我给你放烟花看！</button></div><div class="footer-item2"><div class="fiem"><a #="#">我的说说</a></div><div class="fiem"><a #="#">关于蒜头王八</a></div><div class="fiem"><a #="#">我的归档</a></div><div class="fiem"><a #="#">逛逛主页</a></div><div class="fiem"><a #="#">看看文章分类</a></div><div class="fiem"><a #="#">看看文章标签</a></div><div class="fiem"><a #="#">去留言！！</a></div><div class="fiem"><a #="#">看看我的朋友圈</a></div><div class="fiem"><a #="#">看看我的音乐</a></div></div><div class="footer-item3"><div class="fitem">这里空空如也~不知道写什么好</div></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.css"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="12860445508" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="true" data-order="random" data-preload="none" data-autoplay="true" muted></div><script src="/styles/js/fish.js"></script><script src="/js/main.js"></script><script src="/styles/js/footer.js"></script><script id="canvas_nest" defer="defer" color="255,230,130" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="你是坠棒的！,我是最棒的！,社会你我他,文明靠大家" data-fontsize="25px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="请输入关键词&lt;(￣︶￣)↗[GO!]" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

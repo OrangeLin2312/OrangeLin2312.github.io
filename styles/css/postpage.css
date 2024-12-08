@@ -1,0 +1,10 @@
+.container code{
+    /*color: #ffeb00 !important;*/
+}
+
+/*文章页面*/
+.layout > #post {
+    background: linear-gradient(90deg, rgba(167, 223, 255, 0.53),
+    rgba(255, 255, 255, 0.76),
+    rgba(255, 230, 127, 0.4));
+}
