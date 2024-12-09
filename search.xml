@@ -73,31 +73,6 @@
     
     
     <entry>
-      <title>blender学习</title>
-      <link href="/2024/11/28/blender%E5%AD%A6%E4%B9%A0/"/>
-      <url>/2024/11/28/blender%E5%AD%A6%E4%B9%A0/</url>
-      
-        <content type="html"><![CDATA[<h1 id="blender学习"><a href="#blender学习" class="headerlink" title="blender学习"></a>blender学习</h1><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>shift+滚轮&#x3D;&#x3D;&gt;平移</p><p>shift+A&#x3D;&#x3D;&gt;添加物体</p><p>shift+C&#x3D;&#x3D;&gt;游标迅速回到世界中心，</p><p>游标在哪里，东西就添加到哪里（听起来是一个很好用的工具哦</p><p>shift+鼠标右键&#x3D;&#x3D;&gt;游标的选择</p><p>视图切换</p><p>tab键上面的~号键</p><h2 id="倒角"><a href="#倒角" class="headerlink" title="倒角"></a>倒角</h2><p>段数是平滑度</p><p><strong>数量</strong>就会改变大幅度的形状了，按下shift会有更精细化的调整</p><p>如果觉得拉伸后很奇怪，要ctrl+A对所选对象进行一个缩放的应用</p><h2 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h2><p>r+x+90</p><p>沿着x轴旋转90°的意思</p><h2 id="隔离模式"><a href="#隔离模式" class="headerlink" title="隔离模式"></a>隔离模式</h2><p>&#x2F;键，单独对某一个模型进行操作</p><h2 id="编辑模式"><a href="#编辑模式" class="headerlink" title="编辑模式"></a>编辑模式</h2><p>快捷键：点 边 面</p><p>对应：1，2，3</p><p>tab切换选中物体的编辑模式</p><p>ctrl+b进行选中边的倒角，鼠标滑轮进行段数增减</p><p>i键&#x3D;&#x3D;&gt;面内缩</p><p><img src="C:\Users\86158\AppData\Roaming\Typora\typora-user-images\image-20240727185810535.png" alt="image-20240727185810535"></p><p>e键&#x3D;&#x3D;&gt;面挤出</p><p>alt选中循环边</p><p>m键合并&#x3D;&#x3D;&gt;按距离合并顶点</p><h2 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h2><p>s+shift+z,锁定z轴缩放其他</p><h2 id="几何原点"><a href="#几何原点" class="headerlink" title="几何原点"></a>几何原点</h2><p>右键&#x3D;&#x3D;&gt;设置原点</p><h2 id="收藏夹"><a href="#收藏夹" class="headerlink" title="收藏夹"></a>收藏夹</h2><p>快捷键q</p><h2 id="表面细分"><a href="#表面细分" class="headerlink" title="表面细分"></a>表面细分</h2><p>ctrl+1\2\3</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 我随便写写，你随便看看 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> blender </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Linux操作系统</title>
       <link href="/2024/11/28/Linux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0(1)/"/>
       <url>/2024/11/28/Linux%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0(1)/</url>
@@ -115,6 +90,31 @@
         <tags>
             
             <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>blender学习</title>
+      <link href="/2024/11/28/blender%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2024/11/28/blender%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="blender学习"><a href="#blender学习" class="headerlink" title="blender学习"></a>blender学习</h1><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>shift+滚轮&#x3D;&#x3D;&gt;平移</p><p>shift+A&#x3D;&#x3D;&gt;添加物体</p><p>shift+C&#x3D;&#x3D;&gt;游标迅速回到世界中心，</p><p>游标在哪里，东西就添加到哪里（听起来是一个很好用的工具哦</p><p>shift+鼠标右键&#x3D;&#x3D;&gt;游标的选择</p><p>视图切换</p><p>tab键上面的~号键</p><h2 id="倒角"><a href="#倒角" class="headerlink" title="倒角"></a>倒角</h2><p>段数是平滑度</p><p><strong>数量</strong>就会改变大幅度的形状了，按下shift会有更精细化的调整</p><p>如果觉得拉伸后很奇怪，要ctrl+A对所选对象进行一个缩放的应用</p><h2 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h2><p>r+x+90</p><p>沿着x轴旋转90°的意思</p><h2 id="隔离模式"><a href="#隔离模式" class="headerlink" title="隔离模式"></a>隔离模式</h2><p>&#x2F;键，单独对某一个模型进行操作</p><h2 id="编辑模式"><a href="#编辑模式" class="headerlink" title="编辑模式"></a>编辑模式</h2><p>快捷键：点 边 面</p><p>对应：1，2，3</p><p>tab切换选中物体的编辑模式</p><p>ctrl+b进行选中边的倒角，鼠标滑轮进行段数增减</p><p>i键&#x3D;&#x3D;&gt;面内缩</p><p><img src="C:\Users\86158\AppData\Roaming\Typora\typora-user-images\image-20240727185810535.png" alt="image-20240727185810535"></p><p>e键&#x3D;&#x3D;&gt;面挤出</p><p>alt选中循环边</p><p>m键合并&#x3D;&#x3D;&gt;按距离合并顶点</p><h2 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h2><p>s+shift+z,锁定z轴缩放其他</p><h2 id="几何原点"><a href="#几何原点" class="headerlink" title="几何原点"></a>几何原点</h2><p>右键&#x3D;&#x3D;&gt;设置原点</p><h2 id="收藏夹"><a href="#收藏夹" class="headerlink" title="收藏夹"></a>收藏夹</h2><p>快捷键q</p><h2 id="表面细分"><a href="#表面细分" class="headerlink" title="表面细分"></a>表面细分</h2><p>ctrl+1\2\3</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 我随便写写，你随便看看 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> blender </tag>
             
         </tags>
       
