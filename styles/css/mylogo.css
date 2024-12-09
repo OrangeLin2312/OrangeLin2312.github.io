@@ -1,0 +1,84 @@
+#my-logo {
+
+    position: fixed;
+    bottom: 150px;
+    right: 50px;
+
+    z-index: 12;
+
+}
+
+#my-logo #logo-items {
+    position: relative;
+    /*perspective: 1000px;*/
+    /*开启3d视图*/
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 1, 1, 45deg);
+
+    height: 100px;
+    width: 100px;
+    /*background: red;*/
+
+}
+
+#logo-items > div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("../../images/dog.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1)
+}
+
+#logo-items .logo-item1 {
+
+    transform: translateZ(50px);
+
+}
+
+#logo-items .logo-item2 {
+    transform: translateZ(-50px);
+}
+
+#logo-items .logo-item3 {
+    transform: translateY(50px) rotateX(90deg);
+}
+
+#logo-items .logo-item4 {
+    transform: translateY(-50px) rotateX(-90deg);
+}
+
+#logo-items .logo-item5 {
+    transform: translateX(50px) rotateY(90deg);
+}
+
+#logo-items .logo-item6 {
+    transform: translateX(-50px) rotateY(-90deg);
+}
+
+#my-logo #logo-items:hover {
+    /* 鼠标悬停时的状态 */
+    animation: rotate3d 2s linear infinite; /* 应用旋转动画 */
+}
+
+/* 定义旋转动画 */
+@keyframes rotate3d {
+    from {
+        transform: rotate3d(1, 1, 1, 0deg);
+    }
+    to {
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
+}
+
+#logo-items .logo-item1:hover,
+#logo-items .logo-item2:hover,
+#logo-items .logo-item3:hover,
+#logo-items .logo-item4:hover,
+#logo-items .logo-item5:hover,
+#logo-items .logo-item6:hover {
+    box-shadow: 0 0 30px #FFFFB6;
+}

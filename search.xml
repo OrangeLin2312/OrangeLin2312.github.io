@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>关于Hexo</title>
+      <link href="/2024/12/09/%E5%85%B3%E4%BA%8EHexo/"/>
+      <url>/2024/12/09/%E5%85%B3%E4%BA%8EHexo/</url>
+      
+        <content type="html"><![CDATA[<h1 id="hexo的cdn和pjax是拿来干嘛的"><a href="#hexo的cdn和pjax是拿来干嘛的" class="headerlink" title="hexo的cdn和pjax是拿来干嘛的"></a>hexo的cdn和pjax是拿来干嘛的</h1><p>Hexo 是一个快速、简单且强大的博客框架，它使用 Markdown（或其他渲染引擎）解析文章，并通过主题系统生成静态网站。CDN 和 PJAX 是两种不同的技术，它们可以一起使用来提高网站的性能和用户体验。</p><ol><li>CDN（内容分发网络）：<br>CDN 是一种分布式网络系统，它的主要作用是通过缓存网站内容在多个服务器上，从而减少用户访问网站时的延迟。当用户请求某个资源时，CDN 会根据用户的地理位置选择最近的服务器来提供服务，这样可以加快页面加载速度，提高用户体验。</li></ol><p>在 Hexo 中，你可以将静态资源（如图片、CSS 和 JavaScript 文件）托管到 CDN 上，以提高网站的加载速度。通常，你需要在主题的配置文件中设置 CDN 地址，然后在构建和部署网站时，将静态资源上传到 CDN。</p><ol start="2"><li>PJAX（PushState + AJAX）：<br>PJAX 是一种优化网站导航的技术，它结合了 HTML5 的 PushState API 和 AJAX 请求。通过 PJAX，当用户在网站上点击链接时，页面的内容会通过 AJAX 请求加载，而不是重新加载整个页面。这样可以减少页面切换时的延迟，提高用户体验。</li></ol><p>在 Hexo 中，你可以使用 PJAX 插件来实现 PJAX 功能。当用户点击链接时，插件会拦截请求，然后通过 AJAX 请求新页面的内容，并将其插入到当前页面中。这样，只有部分内容发生变化，而不是整个页面重新加载。</p><p>总结一下，CDN 和 PJAX 是两种不同的技术，它们可以一起使用来提高网站的性能和用户体验。CDN 主要用于加速静态资源的加载，而 PJAX 则用于优化页面导航。在 Hexo 中，你可以通过配置和插件来实现这些功能。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 腾讯元宝 </tag>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>学习前端3件套</title>
       <link href="/2024/12/07/%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF3%E4%BB%B6%E5%A5%97/"/>
       <url>/2024/12/07/%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF3%E4%BB%B6%E5%A5%97/</url>
