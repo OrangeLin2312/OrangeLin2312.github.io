@@ -1,8 +1,8 @@
 #my-logo {
 
     position: fixed;
-    bottom: 150px;
-    right: 50px;
+    bottom: 200px;
+    left: 50px;
 
     z-index: 12;
 
@@ -14,6 +14,7 @@
     /*开启3d视图*/
     transform-style: preserve-3d;
     transform: rotate3d(1, 1, 1, 45deg);
+    animation-fill-mode: backwards;
 
     height: 100px;
     width: 100px;
@@ -22,10 +23,12 @@
 }
 
 #logo-items > div {
+    transform-style: preserve-3d;
     position: absolute;
     height: 100%;
     width: 100%;
     background-image: url("../../images/dog.jpg");
+    /*background: rgba(255, 255, 182, 0.5);*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -40,15 +43,15 @@
 }
 
 #logo-items .logo-item2 {
-    transform: translateZ(-50px);
+    transform: translateZ(-50px) rotateX(-180deg);
 }
 
 #logo-items .logo-item3 {
-    transform: translateY(50px) rotateX(90deg);
+    transform: translateY(50px) rotateX(-90deg);
 }
 
 #logo-items .logo-item4 {
-    transform: translateY(-50px) rotateX(-90deg);
+    transform: translateY(-50px) rotateX(90deg);
 }
 
 #logo-items .logo-item5 {
@@ -81,4 +84,11 @@
 #logo-items .logo-item5:hover,
 #logo-items .logo-item6:hover {
     box-shadow: 0 0 30px #FFFFB6;
+}
+
+#logo-items .i-text{
+    text-align: center;
+    font-size: 20px;
+    transform: translate3d(10px,25px,20px) rotateX(-90deg);
+    color: rgb(233, 165, 245);
 }
