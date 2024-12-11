@@ -100,9 +100,7 @@ body {
 
 /*时间轴页面*/
 .layout > #archive {
-    background: linear-gradient(90deg, rgba(149, 217, 83, 0.3),
-    rgba(255, 179, 90, 0.3),
-    rgba(255, 230, 127, 0.3)) !important;
+    background: rgba(255, 255, 255, 0.6);
 }
 
 [data-theme=dark] .layout > #archive {
