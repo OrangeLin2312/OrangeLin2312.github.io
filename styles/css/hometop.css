@@ -312,6 +312,7 @@ div#banners {
         flex-direction: column;
     }
     div#banner-bg{
+        perspective: 800px;
         position: relative;
         width: 100%;
         height: 86%;
@@ -331,6 +332,7 @@ div#banners {
     }
     div#banner-bg .banner-bg2{
         position: absolute;
+        transform: translateZ(100px);
         height: 100%;
         width: 100%;
         left: 0px;
@@ -344,6 +346,7 @@ div#banners {
     }
     div#banner-bg .banner-bg3{
         position: absolute;
+        transform: translateZ(200px);
         height: 100%;
         width: 100%;
         left: -80px;

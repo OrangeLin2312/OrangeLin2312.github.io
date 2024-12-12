@@ -9,12 +9,12 @@
     /* 定义动画时间范围 */
     animation-range: contain 0% contain 40%;
     transition: box-shadow 0.2s ease;
-    height: 14rem !important;
+    /*height: 14rem !important;*/
 }
 
 [data-theme=dark] .recent-post-item {
     background: linear-gradient(90deg, rgba(164, 216, 255, 0.32), rgb(70, 67, 67)) !important;
-    height: 14rem !important;
+    /*height: 14rem !important;*/
     /*animation-fill-mode: forwards;*/
     /*animation-play-state: paused; !* 默认暂停动画 *!*/
     animation-name: grow;
