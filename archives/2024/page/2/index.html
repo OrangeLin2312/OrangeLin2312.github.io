@@ -143,7 +143,7 @@
   isHighlightShrink: false,
   isToc: false,
   isShuoshuo: false
-}</script><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><link rel="stylesheet" href="/styles/css/main.css"><link rel="stylesheet" href="/styles/css/background.css"><link rel="stylesheet" href="/styles/css/shuoshuo.css"><link rel="stylesheet" href="/styles/css/homepage.css"><link rel="stylesheet" href="/styles/css/hometop.css"><link rel="stylesheet" href="/styles/css/postpage.css"><link rel="stylesheet" href="/styles/css/footer.css"><link rel="stylesheet" href="/styles/css/swiper-post.css"><link rel="stylesheet" href="/styles/css/mylogo.css"><link rel="stylesheet" href="/styles/css/about.css"><script src="/styles/js/hometop.js"></script><script src="/styles/js/footer.js"></script><script src="/styles/js/about.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiperstyle.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><style type="text/css">#posts-chart,#posts-calendar,#categories-chart,#categories-radar,#tags-chart{width: 100%;height: 300px;margin: 0.5rem auto;padding: 0.5rem;display: flex;}</style><script type="text/javascript" data-pjax="" src="https://lib.baomitu.com/echarts/4.7.0/echarts.min.js"></script><body><!--#loading-box--><!--  .loading-left-bg--><!--  .loading-right-bg--><!--  .spinner-box--><!--    .configure-border-1--><!--      .configure-core--><!--    .configure-border-2--><!--      .configure-core--><!--    .loading-word= _p('loading')--><div id="loading-box"><div class="gear-loader"><div class="gear-loader_overlay"></div><div class="gear-loader_cogs"><div class="gear-loader_cogs__top"><div class="gear-top_part"></div><div class="gear-top_part"></div><div class="gear-top_part"></div><div class="gear-top_hole"></div></div><div class="gear-loader_cogs__left"><div class="gear-left_part"></div><div class="gear-left_part"></div><div class="gear-left_part"></div><div class="gear-left_hole"></div></div><div class="gear-loader_cogs__bottom"><div class="gear-bottom_part"></div><div class="gear-bottom_part"></div><div class="gear-bottom_part"></div><div class="gear-bottom_hole"></div></div></div></div></div><script>(()=>{
+}</script><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><link rel="stylesheet" href="/styles/css/main.css"><link rel="stylesheet" href="/styles/css/background.css"><link rel="stylesheet" href="/styles/css/shuoshuo.css"><link rel="stylesheet" href="/styles/css/homepage.css"><link rel="stylesheet" href="/styles/css/hometop.css"><link rel="stylesheet" href="/styles/css/postpage.css"><link rel="stylesheet" href="/styles/css/footer.css"><link rel="stylesheet" href="/styles/css/swiper-post.css"><link rel="stylesheet" href="/styles/css/mylogo.css"><link rel="stylesheet" href="/styles/css/about.css"><script src="/styles/js/hometop.js"></script><script src="/styles/js/footer.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiperstyle.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><style type="text/css">#posts-chart,#posts-calendar,#categories-chart,#categories-radar,#tags-chart{width: 100%;height: 300px;margin: 0.5rem auto;padding: 0.5rem;display: flex;}</style><script type="text/javascript" data-pjax="" src="https://lib.baomitu.com/echarts/4.7.0/echarts.min.js"></script><body><!--#loading-box--><!--  .loading-left-bg--><!--  .loading-right-bg--><!--  .spinner-box--><!--    .configure-border-1--><!--      .configure-core--><!--    .configure-border-2--><!--      .configure-core--><!--    .loading-word= _p('loading')--><div id="loading-box"><div class="gear-loader"><div class="gear-loader_overlay"></div><div class="gear-loader_cogs"><div class="gear-loader_cogs__top"><div class="gear-top_part"></div><div class="gear-top_part"></div><div class="gear-top_part"></div><div class="gear-top_hole"></div></div><div class="gear-loader_cogs__left"><div class="gear-left_part"></div><div class="gear-left_part"></div><div class="gear-left_part"></div><div class="gear-left_hole"></div></div><div class="gear-loader_cogs__bottom"><div class="gear-bottom_part"></div><div class="gear-bottom_part"></div><div class="gear-bottom_part"></div><div class="gear-bottom_hole"></div></div></div></div></div><script>(()=>{
   const $loadingBox = document.getElementById('loading-box')
   const $body = document.body
   const preloader = {
@@ -323,58 +323,42 @@
     btf.addGlobalFn('pjaxComplete', () => newestComments.newestCommentInit(name, getComment), name)
   }
 }</script><script>window.addEventListener('load', () => {
-  const keyName = 'github-newest-comments'
+  const keyName = 'twikoo-newest-comments'
   const { changeContent, generateHtml, run } = window.newestComments
 
-  const findTrueUrl = (array, ele) => {
-    Promise.all(array.map(item =>
-      fetch(item.url).then(resp => resp.json()).then(data => {
-        let urlArray = data.body ? data.body.match(/(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?/ig) : []
-        if (!Array.isArray(urlArray) || urlArray.length === 0) {
-          urlArray = [`${data.html_url}`]
-        }
-        if (data.user.login === 'utterances-bot') {
-          return urlArray.pop()
-        } else {
-          return urlArray.shift()
-        }
-      })
-    )).then(res => {
-        array = array.map((i,index)=> {
-          return {
-            ...i,
-            url: res[index]
-          }
-        })
-
-        btf.saveToLocal.set(keyName, JSON.stringify(array), 10/(60*24))
-        generateHtml(array, ele)
-    });
-  }
-
   const getComment = ele => {
-    fetch('https://api.github.com/repos/OrangeLin2312/OrangeComments/issues/comments?sort=updated&direction=desc&per_page=6&page=1',{
-      "headers": {
-        Accept: 'application/vnd.github.v3.html+json'
-      }
-    })
-      .then(response => response.json())
-      .then(data => {
-        const githubArray = data.map(item => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://orangecomments2312.vercel.app',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(res => {
+        const twikooArray = res.map(e => {
           return {
-            'avatar': item.user.avatar_url,
-            'content': changeContent(item.body_html || item.body),
-            'nick': item.user.login,
-            'url': item.issue_url,
-            'date': item.updated_at
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
           }
         })
-        findTrueUrl(githubArray, ele)
-      }).catch(e => {
-        console.error(e)
+
+        btf.saveToLocal.set(keyName, JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray, ele)
+      }).catch(err => {
+        console.error(err)
         ele.textContent= "无法获取评论，请确认相关配置是否正确"
       })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runTwikoo)
+    }
   }
+
   run(keyName, getComment)
 })</script><div class="aplayer no-destroy" data-id="12860445508" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listfolded="true" data-order="random" data-preload="none" data-autoplay="true" muted=""></div><script src="/styles/js/fish.js"></script><script src="/styles/js/footer.js"></script><script id="canvas_nest" defer="defer" color="255,230,130" opacity="0.7" zindex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
 POWERMODE.shake = true;
