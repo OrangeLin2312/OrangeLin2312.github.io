@@ -1,36 +1,3 @@
-.swiper-post-item {
-    margin: 20px auto;
-    background: linear-gradient(90deg, #FFFFB6, rgba(167, 223, 255, 0.45));
-    border-radius: 10px;
-    transition: box-shadow 0.2s ease;
-}
-
-[data-theme=dark] .swiper-post-item {
-    background: linear-gradient(90deg, #FFFFB6, rgb(70, 67, 67));
-    transition: box-shadow 0.2s ease;
-}
-
-.swiper-post-item:hover {
-    box-shadow: 0 0 10px rgb(184, 225, 186), /* 第一层阴影，轻微的内发光 */ 0 0 20px rgba(191, 222, 238, 0.45), /* 第二层阴影，更强的内发光 */ 0 0 30px rgb(255, 227, 153) !important; /* 第三层阴影，较弱的外发光 */
-}
-
-.blog-slider__pagination .swiper-pagination-bullet-active {
-    opacity: 1;
-    background: #FFFFB6 !important;
-    height: 30px;
-}
-
-@media screen and (max-width: 768px) {
-    .blog-slider__img {
-        transform: translateY(0) !important;
-        width: 90%;
-    }
-
-    .blog-slider__content {
-        margin-top: 0 !important;
-        margin-bottom: 10px !important;
-    }
-    .blog-slider__button{
-        background-color:#ff9577 !important;
-    }
-}
+/* build time:Tue Dec 24 2024 15:49:34 GMT+0800 (中国标准时间)*/
+.swiper-post-item{margin:20px auto;background:linear-gradient(90deg,#ffffb6,rgba(167,223,255,.45));border-radius:10px;transition:box-shadow .2s ease}[data-theme=dark] .swiper-post-item{background:linear-gradient(90deg,#ffffb6,#464343);transition:box-shadow .2s ease}.swiper-post-item:hover{box-shadow:0 0 10px #b8e1ba,0 0 20px rgba(191,222,238,.45),0 0 30px #ffe399!important}.blog-slider__pagination .swiper-pagination-bullet-active{opacity:1;background:#ffffb6!important;height:30px}@media screen and (max-width:768px){.blog-slider__img{transform:translateY(0)!important;width:90%}.blog-slider__content{margin-top:0!important;margin-bottom:10px!important}.blog-slider__button{background-color:#ff9577!important}}
+/* rebuild by neat */
